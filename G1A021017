@@ -1,0 +1,60 @@
+#include <stdio.h>
+
+int main(){
+ int a=10,b=15, c=27, t;
+  int *p1, *p2, *p3;
+
+  printf("=========================================\n");
+  printf("Alamat dari Variabel a,b, dan c--\n");
+  printf("========================================\n");
+  printf("Alamat a nalamatnya sekarang =%p\n",&a);
+  printf("Alamat b nalamatnya sekarang =%p\n",&b);
+  printf("Alamat c nalamatnya sekarang =%p\n",&c);
+  printf("\n");
+  
+  p1 = &a;
+  p2 = &b;
+  printf("Alamat yang ditunjuk p1 =  %p\nNilai yang ditunjuk p1 =  %d\n",p1,*p1);
+  printf("\n");
+  printf("Alamat yang ditunjuk p2 = %p\nNilai yang ditunjuk p2 =  %d\n",p2,*p2);
+  printf("\n");
+
+  t = c;
+  c = *p1;
+  *p1 = t;
+  printf("Nilai yang ditunjuk p1 sekarang = %d\nAlamat sekarang =%p\n",*p1,p1);
+  printf("\n");
+
+  t = *p2;
+  *p2 = a;
+  a = t;
+  printf("Nilai yang ditunjuk p2 sekarang = %d\nAlamatnya sekarang =%p\n",*p2,p2);
+  printf("\n");
+
+  t = 6;
+  b = t;
+  printf("Nilai yang ditunjuk b sekarang = %d\nAlamat sekarang =%p\n",b,&b);
+  printf("\n");
+
+  p3 = &b;
+  printf("Nilai yang ditunjuk p3 sekarang = %d\nAlamat sekarang =%p\n",*p3,p3);
+  printf("\n");
+  
+  p3 = &c;
+  printf("Nilai yang ditunjuk p3 sekarang = %d\nAlamat sekarang =%p\n",*p3,p3);
+  printf("\n");
+
+  *p1 = *p2;
+  printf("Nilai yang ditunjuk p1 sekarang = %d\nAlamat sekarang =%p\n",*p1,p1);
+  printf("\n");
+
+  printf("========================================\n");
+  printf("Nilai Akhirnya dan Alamat:\n");
+  printf("nilai p1 = %d dan alamat = %p\n",*p1,p1);
+  printf("nilai p2 = %d dan alamat = %p\n",*p2,p2);
+  printf("nilai p3 = %d dan alamat = %p\n",*p3,p3);
+  printf("nilai a  = %d dan alamat = %p\n",a,&a);
+  printf("nilai b  = %d dan alamat = %p\n",b,&b);
+  printf("nilai c  = %d dan alamat = %p\n",c,&c);
+  printf("========================================\n");
+}
